@@ -16,7 +16,11 @@ setStructure(container, 'div', 'row1', 'row mt-3')
 setStructure(row1, 'div', 'col1', 'col-12')
 setStructure(row1, 'div', 'col2', 'col-12')
 
-// setStructure(con)
+setStructure()
+
+setStructure
+
+setStructure(con)
 
  
 
@@ -66,7 +70,7 @@ const grabForm = document.getElementById('submission')
     }
     function putOnPage (fill) {
         document.getElementById('col1').innerHTML = 'WEATHER'
-        document.getElementById('col2').innerHTML - 'test'
+        document.getElementById('col2').innerHTML = 'test'
         document.getElementById('fetchTarget1').innerHTML = stateUpdateData.city
         document.getElementById('fetchTarget2').innerHTML = stateUpdateData.temp.kelvin
         document.getElementById('fetchTarget3').innerHTML = stateUpdateData.temp.celcius
@@ -74,7 +78,7 @@ const grabForm = document.getElementById('submission')
         document.getElementById('fetchTarget5').innerHTML = stateUpdateData.condition
     }
 
-
+putOnPage();
 
 
 
