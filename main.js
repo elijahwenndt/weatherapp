@@ -1,3 +1,21 @@
+
+
+
+function setStructure(parent, elementType, id, classes) {
+    let element = document.createElement(elementType)
+    if (classes) {
+        element.setAttribute('class', classes)
+    }
+    if (id) { 
+        element.setAttribute('id', id)
+    }
+    parent.appendChild(element)
+}
+
+
+ 
+
+
 let stateUpdateData = {
     city: "",
     temp: {
@@ -36,8 +54,8 @@ const grabForm = document.getElementById('submission')
         
         stateUpdateData.city= data.name
         stateUpdateData.temp.kelvin = data.main.temp + ": K"
-        stateUpdateData.temp.celcius = Math.round((data.main.temp - 273.15) * 1.8 + 32) + ": F"
-        stateUpdateData.temp.fahrenheit = Math.round(data.main.temp - 273.15) + ": C"
+        stateUpdateData.temp.fahrenheit = Math.round((data.main.temp - 273.15) * 1.8 + 32) + ": F"
+        stateUpdateData.temp.celcius = Math.round(data.main.temp - 273.15) + ": C"
         stateUpdateData.condition = data.weather[0].main
         putOnPage()
     }
