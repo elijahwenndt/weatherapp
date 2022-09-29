@@ -13,13 +13,13 @@ const container = document.getElementById('container')
 container.setAttribute("class", "d-grid gap-4 text-center")
 
 setStructure(container, 'div', 'row1', 'row mt-3')
-setStructure(row1, 'div', 'col1', 'col-12')
-setStructure(row1, 'div', 'col2', 'col-12')
+setStructure(row1, 'div', 'weather', 'col-12')
+setStructure(row1, 'div', 'instructionText', 'col-12')
 
 setStructure(container, 'div', 'row2', 'row')
 setStructure(row2, 'div', 'col3', 'col-12')
 setStructure(col3, 'form', 'submission', 'm-6')
-setStructure(submission, 'input', 'zipcode', '')
+setStructure(submission, 'input', 'zipCode', '')
 
 setStructure(container, 'div', 'row3', 'row')
 setStructure(row3, 'div', 'cityText', 'col-12')
@@ -27,20 +27,13 @@ setStructure(row3, 'div', 'fetchTarget1', 'col-12')
 
 setStructure(container, 'div', 'row4', 'row')
 setStructure(row4, 'div', 'tempText', 'col-12')
-setStructure(row4, 'div', 'fetchTarget2', 'col-4')
-setStructure(row4, 'div', 'fetchTarget3', 'col-4')
-setStructure(row4, 'div', 'fetchTarget4', 'col-4')
+setStructure(row4, 'div', 'fetchTarget2', 'col-sm-4 col-12')
+setStructure(row4, 'div', 'fetchTarget3', 'col-sm-4 col-12')
+setStructure(row4, 'div', 'fetchTarget4', 'col-sm-4 col-12')
 
 setStructure(container, 'div', 'row5', 'row')
 setStructure(row5, 'div', 'conditionText', 'col-12')
-
-
-
-
-
-
-
- 
+setStructure(row5, 'div', 'fetchTarget5', 'col-12')
 
 
 let stateUpdateData = {
@@ -87,8 +80,11 @@ const grabForm = document.getElementById('submission')
         putOnPage()
     }
     function putOnPage (fill) {
-        document.getElementById('col1').innerHTML = 'WEATHER'
-        document.getElementById('col2').innerHTML = 'test'
+        document.getElementById('weather').innerHTML = 'WEATHER'
+        document.getElementById('instructionText').innerHTML = 'Type in a zip code and hit enter'
+        document.getElementById('cityText').innerHTML = 'CITY'
+        document.getElementById('tempText').innerHTML = 'TEMPERATURE'
+        document.getElementById('conditionText').innerHTML = 'CURRENT CONDITIONS'
         document.getElementById('fetchTarget1').innerHTML = stateUpdateData.city
         document.getElementById('fetchTarget2').innerHTML = stateUpdateData.temp.kelvin
         document.getElementById('fetchTarget3').innerHTML = stateUpdateData.temp.celcius
