@@ -1,17 +1,22 @@
-
-
-
-function setStructure(parent, elementType, id, classes) {
+//thank you to instructors, josh dale, dakota, estus for helping me get started 
+function setStructure(parent, elementType, setId, setClass) {
     let element = document.createElement(elementType)
-    if (classes) {
-        element.setAttribute('class', classes)
+    if (setClass) {
+        element.setAttribute('class', setClass)
     }
-    if (id) { 
-        element.setAttribute('id', id)
+    if (setId) { 
+        element.setAttribute('id', setId)
     }
     parent.appendChild(element)
 }
+const container = document.getElementById('container')
+container.setAttribute("class", "d-grid gap-4 text-center")
 
+setStructure(container, 'div', 'row1', 'row mt-3')
+setStructure(row1, 'div', 'col1', 'col-12')
+setStructure(row1, 'div', 'col2', 'col-12')
+
+// setStructure(con)
 
  
 
@@ -53,13 +58,15 @@ const grabForm = document.getElementById('submission')
     function passState(data) {
         
         stateUpdateData.city= data.name
-        stateUpdateData.temp.kelvin = data.main.temp + ": K"
-        stateUpdateData.temp.fahrenheit = Math.round((data.main.temp - 273.15) * 1.8 + 32) + ": F"
-        stateUpdateData.temp.celcius = Math.round(data.main.temp - 273.15) + ": C"
+        stateUpdateData.temp.kelvin = data.main.temp + ": °K"
+        stateUpdateData.temp.fahrenheit = Math.round((data.main.temp - 273.15) * 1.8 + 32) + ": °F"
+        stateUpdateData.temp.celcius = Math.round(data.main.temp - 273.15) + ": °C"
         stateUpdateData.condition = data.weather[0].main
         putOnPage()
     }
     function putOnPage (fill) {
+        document.getElementById('col1').innerHTML = 'WEATHER'
+        document.getElementById('col2').innerHTML - 'test'
         document.getElementById('fetchTarget1').innerHTML = stateUpdateData.city
         document.getElementById('fetchTarget2').innerHTML = stateUpdateData.temp.kelvin
         document.getElementById('fetchTarget3').innerHTML = stateUpdateData.temp.celcius
