@@ -75,7 +75,7 @@ const grabForm = document.getElementById('submission')
     getData(`https://api.openweathermap.org/data/2.5/weather?zip=${newZip},us&appid=3f7b74a1bdfcaad595048157e8c38426`)
     }
     else {
-        alert('try again bozo')
+        alert('TRY AGAIN BOZO')
     }
  })
 
@@ -167,9 +167,9 @@ const grabForm = document.getElementById('submission')
     function putOnPage (fill) {
         document.getElementById('weather').innerHTML = 'Tranquil Weather'
         document.getElementById('instructionText').innerHTML = 'Type in a zip code and hit enter'
-        document.getElementById('cityText').innerHTML = 'CITY'
-        document.getElementById('tempText').innerHTML = 'TEMPERATURE'
-        document.getElementById('conditionText').innerHTML = 'CURRENT CONDITIONS'
+        document.getElementById('cityText').innerHTML = 'CITY:'
+        document.getElementById('tempText').innerHTML = 'TEMPERATURE:'
+        document.getElementById('conditionText').innerHTML = 'CURRENT CONDITIONS:'
         document.getElementById('fetchTarget1').innerHTML = stateUpdateData.city
         document.getElementById('fetchTarget2').innerHTML = stateUpdateData.temp.kelvin
         document.getElementById('fetchTarget3').innerHTML = stateUpdateData.temp.celcius
