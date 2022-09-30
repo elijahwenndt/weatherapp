@@ -79,9 +79,6 @@ const grabForm = document.getElementById('submission')
     }
  })
 
-
-
-
     function passState(data) {
         
         stateUpdateData.city= data.name
@@ -115,6 +112,16 @@ const grabForm = document.getElementById('submission')
         }
         
         else if (setBG == 'Rain'){
+            let style = document.createElement('style');
+            style.innerHTML = `
+            #bg-set {
+                background: url("rain.jpg") no-repeat center center fixed;
+                background-size: cover;
+            }
+            `;
+            document.head.appendChild(style);
+        }
+        else if (setBG == 'Drizzle'){
             let style = document.createElement('style');
             style.innerHTML = `
             #bg-set {
