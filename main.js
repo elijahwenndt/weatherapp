@@ -1,4 +1,6 @@
 //thank you to instructors(johnathon and josh), dakota, josh dale, estus for helping me get on the right path
+//i have about 5 pages of pseudocode in my notebook, i will upload a markdown version to github this weekend 
+//also will refactor bad solutions, and add stretch goals this weekend
 
 //function that will take in parameters. based on parameters defined later on it grabs what the parent element will be
 //what the element type it will create, what to set the id too, and what to add to the classes
@@ -188,7 +190,16 @@ const grabForm = document.getElementById('submission')
             `;
             document.head.appendChild(style);
         }
-        
+        else if (setBG =='Haze'){
+            let style = document.createElement('style');
+            style.innerHTML = `
+            #bg-set {
+                background: url("haze.jpg") no-repeat center center fixed;
+                background-size: cover;
+            }
+            `;
+            document.head.appendChild(style);
+        }
         putOnPage()
     }
     
