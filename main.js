@@ -55,6 +55,9 @@ const grabForm = document.getElementById('submission')
     const grabText = document.getElementById('zipCode')
     console.log(grabText.value)
     let newZip = grabText.value
+    console.log(newZip.length)
+
+    if (newZip.length === 5 || !isNaN(newZip)) {
     async function getData(url) {
         try {
             let response = await axios.get(url)
@@ -64,12 +67,22 @@ const grabForm = document.getElementById('submission')
             
         } 
         catch (error) {
-            console.error(error)
+            alert('try again bozo')
         }
-    
     }
+    
+    
+    
     getData(`https://api.openweathermap.org/data/2.5/weather?zip=${newZip},us&appid=3f7b74a1bdfcaad595048157e8c38426`)
+    }
+    else {
+        alert('try again bozo')
+    }
  })
+
+
+
+
     function passState(data) {
         
         stateUpdateData.city= data.name
