@@ -1,6 +1,6 @@
 body {
-    background: url("lakestart.jpg") no-repeat center center fixed;
-    background-size: cover;
+    /* background: url("lakestart.jpg") no-repeat center center fixed;
+    background-size: cover; */
     font-size: 40px;
     -webkit-text-stroke: 2px black;
     -webkit-text-fill-color: white;

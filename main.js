@@ -88,10 +88,63 @@ const grabForm = document.getElementById('submission')
         stateUpdateData.temp.kelvin = data.main.temp + ": °K"
         stateUpdateData.temp.fahrenheit = Math.round((data.main.temp - 273.15) * 1.8 + 32) + ": °F"
         stateUpdateData.temp.celcius = Math.round(data.main.temp - 273.15) + ": °C"
-        stateUpdateData.condition = data.weather[0].description
-        if (stateUpdateData.condition = 'clear sky'){
-            
+        stateUpdateData.condition = data.weather[0].description;
+        let setBG = data.weather[0].main
+        console.log(setBG)
+
+        if (setBG == 'Clear'){
+            let style = document.createElement('style');
+            style.innerHTML = `
+            #bg-set {
+                background: url("clearskys.jpg") no-repeat center center fixed;
+                background-size: cover;
+            }
+            `;
+            document.head.appendChild(style);
         }
+        
+        else if (setBG == 'Clouds'){
+            let style = document.createElement('style');
+            style.innerHTML = `
+            #bg-set {
+                background: url("broken_clouds.jpg") no-repeat center center fixed;
+                background-size: cover;
+            }
+            `;
+            document.head.appendChild(style);
+        }
+        
+        else if (setBG == 'Rain'){
+            let style = document.createElement('style');
+            style.innerHTML = `
+            #bg-set {
+                background: url("rain.jpg") no-repeat center center fixed;
+                background-size: cover;
+            }
+            `;
+            document.head.appendChild(style);
+        }
+        else if (setBG == 'Thunderstorm'){
+            let style = document.createElement('style');
+            style.innerHTML = `
+            #bg-set {
+                background: url("thunder_storm.jpg") no-repeat center center fixed;
+                background-size: cover;
+            }
+            `;
+            document.head.appendChild(style);
+        }
+        else if (setBG =='Snow'){
+            let style = document.createElement('style');
+            style.innerHTML = `
+            #bg-set {
+                background: url("snow.jpg") no-repeat center center fixed;
+                background-size: cover;
+            }
+            `;
+            document.head.appendChild(style);
+        }
+        
         putOnPage()
     }
     function putOnPage (fill) {
@@ -108,7 +161,6 @@ const grabForm = document.getElementById('submission')
     }
 
 putOnPage();
-
 
 
 
