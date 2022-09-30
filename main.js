@@ -1,4 +1,4 @@
-//thank you to instructors, josh dale, dakota, estus for helping me get started 
+//thank you to instructors(johnathon and josh), dakota, josh dale, estus for helping me get on the right path
 function setStructure(parent, elementType, setId, setClass) {
     let element = document.createElement(elementType)
     if (setClass) {
@@ -57,7 +57,7 @@ const grabForm = document.getElementById('submission')
     let newZip = grabText.value
     console.log(newZip.length)
 
-    if (newZip.length === 5 || !isNaN(newZip)) {
+    if (newZip.length === 5) {
     async function getData(url) {
         try {
             let response = await axios.get(url)
@@ -70,7 +70,6 @@ const grabForm = document.getElementById('submission')
             alert('try again bozo')
         }
     }
-    
     
     
     getData(`https://api.openweathermap.org/data/2.5/weather?zip=${newZip},us&appid=3f7b74a1bdfcaad595048157e8c38426`)
@@ -89,11 +88,14 @@ const grabForm = document.getElementById('submission')
         stateUpdateData.temp.kelvin = data.main.temp + ": °K"
         stateUpdateData.temp.fahrenheit = Math.round((data.main.temp - 273.15) * 1.8 + 32) + ": °F"
         stateUpdateData.temp.celcius = Math.round(data.main.temp - 273.15) + ": °C"
-        stateUpdateData.condition = data.weather[0].main
+        stateUpdateData.condition = data.weather[0].description
+        if (stateUpdateData.condition = 'clear sky'){
+            
+        }
         putOnPage()
     }
     function putOnPage (fill) {
-        document.getElementById('weather').innerHTML = 'WEATHER'
+        document.getElementById('weather').innerHTML = 'Tranquil Weather'
         document.getElementById('instructionText').innerHTML = 'Type in a zip code and hit enter'
         document.getElementById('cityText').innerHTML = 'CITY'
         document.getElementById('tempText').innerHTML = 'TEMPERATURE'
