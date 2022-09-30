@@ -151,6 +151,16 @@ const grabForm = document.getElementById('submission')
             `;
             document.head.appendChild(style);
         }
+        else if (setBG =='Mist'){
+            let style = document.createElement('style');
+            style.innerHTML = `
+            #bg-set {
+                background: url("mist.jpg") no-repeat center center fixed;
+                background-size: cover;
+            }
+            `;
+            document.head.appendChild(style);
+        }
         
         putOnPage()
     }
